@@ -52,7 +52,7 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between h-20 px-4">
           <a href="#hero" className="flex items-center gap-2">
             <motion.img
-              src={logo}
+              src={logoIcon}
               alt="PRT Renovations Inc."
               className="w-auto"
               animate={{ height: scrolled ? 56 : 0, opacity: scrolled ? 1 : 0 }}
