@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
@@ -17,23 +18,46 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 120);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto flex items-center justify-between h-20 px-4">
-        <a href="#hero" className="flex items-center gap-2">
-          <img src={logo} alt="PRT Renovations Inc." className="h-14 w-auto" />
-        </a>
+    <>
+      {/* Large centered logo overlay - visible before scroll */}
+      <AnimatePresence>
+        {!scrolled && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, scale: 0.6, y: -40 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-6 left-0 right-0 z-[60] flex justify-center pointer-events-none"
+          >
+            <a href="#hero" className="pointer-events-auto">
+              <img src={logo} alt="PRT Renovations Inc." className="h-24 md:h-32 w-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" />
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container mx-auto flex items-center justify-between h-20 px-4">
+          <a href="#hero" className="flex items-center gap-2">
+            <motion.img
+              src={logo}
+              alt="PRT Renovations Inc."
+              className="w-auto"
+              animate={{ height: scrolled ? 56 : 0, opacity: scrolled ? 1 : 0 }}
+              transition={{ duration: 0.3 }}
+            />
+          </a>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
