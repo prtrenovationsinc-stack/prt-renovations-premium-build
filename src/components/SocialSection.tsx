@@ -1,3 +1,5 @@
+// src/components/SocialSection.tsx
+
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
 
@@ -16,8 +18,9 @@ const SocialSection = () => (
           See our latest projects, behind-the-scenes work, and transformations on social media.
         </p>
         <div className="flex justify-center gap-6">
+          {/* CHANGED: Instagram link updated */}
           <a
-            href="https://instagram.com/prtrenovations"
+            href="https://www.instagram.com/prt.renovations/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 bg-muted hover:bg-border rounded-full px-6 py-3 transition-colors group"
@@ -25,8 +28,9 @@ const SocialSection = () => (
             <Instagram className="h-6 w-6 text-primary group-hover:text-secondary transition-colors" />
             <span className="font-body font-medium text-foreground">Instagram</span>
           </a>
+          {/* CHANGED: TikTok link updated */}
           <a
-            href="https://tiktok.com/@prtrenovations"
+            href="https://www.tiktok.com/@prt.renovations?is_from_webapp=1&sender_device=pc"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 bg-muted hover:bg-border rounded-full px-6 py-3 transition-colors group"
