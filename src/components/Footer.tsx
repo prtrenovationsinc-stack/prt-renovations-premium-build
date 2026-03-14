@@ -1,3 +1,5 @@
+// src/components/Footer.tsx
+
 import { Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -46,7 +48,15 @@ const Footer = () => (
             <p>📞 <a href="tel:6476853620" className="hover:text-secondary transition-colors">647-685-3620</a></p>
             <p>✉️ <a href="mailto:info@prtrenovations.ca" className="hover:text-secondary transition-colors">info@prtrenovations.ca</a></p>
             <p>📍 Ontario, Canada</p>
+            
+            {/* ADDED: Business Hours */}
+            <div className="pt-2">
+              <p className="font-semibold text-primary-foreground/70 mb-1">Business Hours:</p>
+              <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+              <p>Sat - Sun: 8:00 AM - 5:00 PM</p>
+            </div>
           </div>
+          
           <div className="flex gap-3 mt-4">
             <a href="https://instagram.com/prtrenovations" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-secondary transition-colors">
               <Instagram className="h-5 w-5" />
