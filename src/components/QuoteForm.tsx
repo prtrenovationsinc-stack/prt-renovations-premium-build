@@ -1,3 +1,5 @@
+// src/components/QuoteForm.tsx
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -55,7 +57,10 @@ const QuoteForm = () => {
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2">
             <span className="text-secondary font-semibold text-sm tracking-[0.15em] uppercase font-body">Get Started</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-charcoal-foreground mt-3 mb-6">Request Your Free Quote</h2>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-charcoal-foreground mt-3 mb-6">
+              {/* CHANGED: Made "Free" bold */}
+              Request Your <span className="font-extrabold text-white">Free</span> Quote
+            </h2>
             <p className="text-charcoal-foreground/70 font-body text-lg leading-relaxed mb-8">
               Tell us about your project and we'll get back to you with a detailed plan and quote. No pressure, no obligation — just honest advice from renovation experts.
             </p>
@@ -72,6 +77,7 @@ const QuoteForm = () => {
             onSubmit={handleSubmit}
             className="lg:col-span-3 bg-background rounded-xl p-8 md:p-10 shadow-2xl"
           >
+            {/* ... Form inputs ... */}
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Full Name *</label>
@@ -121,7 +127,12 @@ const QuoteForm = () => {
               size="lg"
               className="w-full mt-6 bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold text-base py-6 gap-2"
             >
-              {submitting ? "Submitting..." : <>Request My Free Quote <Send className="h-5 w-5" /></>}
+              {submitting ? "Submitting..." : (
+                <>
+                  {/* CHANGED: Made "Free" bold in the button text too */}
+                  Request My <strong className="font-extrabold text-white">Free</strong> Quote <Send className="h-5 w-5" />
+                </>
+              )}
             </Button>
           </motion.form>
         </div>
