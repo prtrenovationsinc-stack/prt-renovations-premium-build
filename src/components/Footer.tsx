@@ -46,10 +46,10 @@ const Footer = () => (
           <h4 className="font-display text-lg font-semibold text-primary-foreground mb-4">Contact</h4>
           <div className="space-y-3 font-body text-sm text-primary-foreground/50">
             <p>📞 <a href="tel:6476853620" className="hover:text-secondary transition-colors">647-685-3620</a></p>
-            <p>✉️ <a href="mailto:info@prtrenovations.ca" className="hover:text-secondary transition-colors">info@prtrenovations.ca</a></p>
+            {/* CHANGED: Email updated to the new gmail address */}
+            <p>✉️ <a href="mailto:prtrenovationsinc@gmail.com" className="hover:text-secondary transition-colors">prtrenovationsinc@gmail.com</a></p>
             <p>📍 Ontario, Canada</p>
             
-            {/* ADDED: Business Hours */}
             <div className="pt-2">
               <p className="font-semibold text-primary-foreground/70 mb-1">Business Hours:</p>
               <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
@@ -58,10 +58,11 @@ const Footer = () => (
           </div>
           
           <div className="flex gap-3 mt-4">
-            <a href="https://instagram.com/prtrenovations" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-secondary transition-colors">
+            {/* CHANGED: Social links updated */}
+            <a href="https://www.instagram.com/prt.renovations/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-secondary transition-colors">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="https://tiktok.com/@prtrenovations" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-secondary transition-colors">
+            <a href="https://www.tiktok.com/@prt.renovations?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-secondary transition-colors">
               <TikTokIcon />
             </a>
           </div>
