@@ -1,10 +1,11 @@
+// src/components/FAQSection.tsx
+
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
   { q: "How long does a typical renovation take?", a: "Timelines vary by project scope. A bathroom renovation typically takes 2-4 weeks, while a full basement build can take 6-10 weeks. We provide a detailed timeline during the planning phase." },
   { q: "Do you provide free estimates?", a: "Yes! We offer free consultations and detailed quotes for all projects. There's no obligation — just honest advice and transparent pricing." },
-  { q: "Are you licensed and insured?", a: "Absolutely. PRT Renovations Inc. is fully licensed and insured, giving you complete peace of mind throughout your renovation project." },
   { q: "What areas do you serve?", a: "We serve homeowners and businesses across the Greater Toronto Area and surrounding Ontario regions including Mississauga, Brampton, Hamilton, Burlington, Oakville, and more." },
   { q: "Can you work with my budget?", a: "We work with a wide range of budgets and always recommend solutions that maximize value. During the consultation, we'll discuss options that fit your goals and budget." },
   { q: "Do you handle permits and inspections?", a: "Yes. We manage the entire process including permits, inspections, and compliance so you don't have to worry about a thing." },
