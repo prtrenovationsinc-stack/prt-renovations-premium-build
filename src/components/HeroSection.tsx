@@ -1,3 +1,5 @@
+// src/components/HeroSection.tsx
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
@@ -26,9 +28,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <span className="inline-block text-secondary font-body text-sm md:text-base font-semibold tracking-[0.2em] uppercase mb-6">
-            Ontario's Premier Renovation Company
-          </span>
+          {/* Removed the 'Ontario's Premier Renovation Company' span from here */}
+          
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6">
             Premium Renovations
             <br />
@@ -53,7 +54,6 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                /* The fix is right below: text-white and bg-white/10 ensure the text is always visible against the dark video overlay */
                 className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-black font-semibold text-base px-8 py-6 gap-2 transition-all duration-300"
               >
                 <Play className="h-4 w-4 fill-current" />
