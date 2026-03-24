@@ -1,6 +1,6 @@
 // src/components/Footer.tsx
 
-import { Instagram } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const TikTokIcon = () => (
@@ -46,7 +46,6 @@ const Footer = () => (
           <h4 className="font-display text-lg font-semibold text-primary-foreground mb-4">Contact</h4>
           <div className="space-y-3 font-body text-sm text-primary-foreground/50">
             <p>📞 <a href="tel:6476853620" className="hover:text-secondary transition-colors">647-685-3620</a></p>
-            {/* CHANGED: Email updated to the new gmail address */}
             <p>✉️ <a href="mailto:prtrenovationsinc@gmail.com" className="hover:text-secondary transition-colors">prtrenovationsinc@gmail.com</a></p>
             <p>📍 Ontario, Canada</p>
             
@@ -57,13 +56,16 @@ const Footer = () => (
             </div>
           </div>
           
-          <div className="flex gap-3 mt-4">
-            {/* CHANGED: Social links updated */}
+          <div className="flex gap-4 mt-5">
             <a href="https://www.instagram.com/prt.renovations/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-secondary transition-colors">
               <Instagram className="h-5 w-5" />
             </a>
             <a href="https://www.tiktok.com/@prt.renovations?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-secondary transition-colors">
               <TikTokIcon />
+            </a>
+            {/* ADDED: Facebook Link */}
+            <a href="https://www.facebook.com/people/PRT-Renovations-Inc/61585491564425/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/50 hover:text-secondary transition-colors">
+              <Facebook className="h-5 w-5" />
             </a>
           </div>
         </div>
