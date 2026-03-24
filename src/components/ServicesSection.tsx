@@ -1,5 +1,7 @@
+// src/components/ServicesSection.tsx
+
 import { motion } from "framer-motion";
-import { Bath, ChefHat, Home, Grid3X3, Fence, Building2, Hammer } from "lucide-react";
+import { Bath, ChefHat, Home, Grid3X3, Fence, Hammer } from "lucide-react";
 
 const services = [
   { icon: Bath, title: "Bathroom Renovations", desc: "Luxury vanities, tile showers, modern fixtures — we transform bathrooms into spa-like retreats." },
@@ -7,7 +9,6 @@ const services = [
   { icon: Home, title: "Basement Builds & Finishing", desc: "Turn your basement into a fully finished living space, rec room, or rental unit." },
   { icon: Grid3X3, title: "Tile Installation", desc: "Precision tile work for floors, walls, backsplashes, and showers with premium materials." },
   { icon: Fence, title: "Decks & Patios", desc: "Custom-built outdoor living spaces that extend your home's footprint and value." },
-  { icon: Building2, title: "Commercial Renovations", desc: "Professional renovations for offices, retail spaces, and commercial properties." },
   { icon: Hammer, title: "General Construction", desc: "Custom builds and renovation projects of any scope, handled with expert precision." },
 ];
 
@@ -27,7 +28,8 @@ const ServicesSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {/* CHANGED: Adjusted grid classes to md:grid-cols-2 lg:grid-cols-3 so the 6 items fit perfectly */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {services.map((s, i) => (
           <motion.div
             key={s.title}
