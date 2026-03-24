@@ -1,7 +1,7 @@
 // src/components/SocialSection.tsx
 
 import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -17,8 +17,7 @@ const SocialSection = () => (
         <p className="text-muted-foreground font-body max-w-lg mx-auto mb-8">
           See our latest projects, behind-the-scenes work, and transformations on social media.
         </p>
-        <div className="flex justify-center gap-6">
-          {/* CHANGED: Instagram link updated */}
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           <a
             href="https://www.instagram.com/prt.renovations/"
             target="_blank"
@@ -28,7 +27,18 @@ const SocialSection = () => (
             <Instagram className="h-6 w-6 text-primary group-hover:text-secondary transition-colors" />
             <span className="font-body font-medium text-foreground">Instagram</span>
           </a>
-          {/* CHANGED: TikTok link updated */}
+          
+          {/* ADDED: Facebook Link */}
+          <a
+            href="https://www.facebook.com/people/PRT-Renovations-Inc/61585491564425/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 bg-muted hover:bg-border rounded-full px-6 py-3 transition-colors group"
+          >
+            <Facebook className="h-6 w-6 text-primary group-hover:text-secondary transition-colors" />
+            <span className="font-body font-medium text-foreground">Facebook</span>
+          </a>
+
           <a
             href="https://www.tiktok.com/@prt.renovations?is_from_webapp=1&sender_device=pc"
             target="_blank"
