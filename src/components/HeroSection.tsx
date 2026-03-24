@@ -28,12 +28,11 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Removed the 'Ontario's Premier Renovation Company' span from here */}
-          
+          {/* CHANGED: Headline updated to "Your Vision, Our Craft" */}
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6">
-            Premium Renovations
+            Your Vision,
             <br />
-            <span className="text-secondary">Built to Last</span>
+            <span className="text-secondary">Our Craft</span>
           </h1>
           <p className="text-primary-foreground/80 font-body text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             Transforming homes and commercial spaces across Ontario with expert
