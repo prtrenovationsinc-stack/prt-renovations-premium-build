@@ -28,11 +28,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          {/* CHANGED: Headline updated to "Your Vision, Our Craft" */}
+          {/* CHANGED: Removed the <br /> to put the headline on one line */}
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6">
-            Your Vision,
-            <br />
-            <span className="text-secondary">Our Craft</span>
+            Your Vision, <span className="text-secondary">Our Craft</span>
           </h1>
           <p className="text-primary-foreground/80 font-body text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             Transforming homes and commercial spaces across Ontario with expert
