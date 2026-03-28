@@ -14,7 +14,7 @@ const projectTypes = [
   "Basement Build / Finishing",
   "Tile Installation",
   "Deck / Patio",
-  "Commercial Renovation",
+  /* CHANGED: Removed "Commercial Renovation" from this list */
   "General Construction",
   "Other",
 ];
@@ -57,7 +57,6 @@ const QuoteForm = () => {
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2">
             <span className="text-secondary font-semibold text-sm tracking-[0.15em] uppercase font-body">Get Started</span>
-            {/* CHANGED: Reverted "Free" back to normal text */}
             <h2 className="font-display text-3xl md:text-4xl font-bold text-charcoal-foreground mt-3 mb-6">
               Request Your Free Quote
             </h2>
@@ -126,7 +125,6 @@ const QuoteForm = () => {
               size="lg"
               className="w-full mt-6 bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold text-base py-6 gap-2"
             >
-              {/* CHANGED: Reverted "Free" back to normal text */}
               {submitting ? "Submitting..." : <>Request My Free Quote <Send className="h-5 w-5" /></>}
             </Button>
           </motion.form>
