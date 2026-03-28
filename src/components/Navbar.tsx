@@ -35,11 +35,12 @@ const Navbar = () => {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.6, y: -40 }}
             transition={{ duration: 0.3 }}
-            /* CHANGED: Moved from 15vh to 10vh to push it even higher up into the center gap */
-            className="fixed top-[10vh] left-0 right-0 z-[60] flex justify-center pointer-events-none"
+            /* CHANGED: Set mobile to top-[8vh] to pull it up, kept desktop at top-[10vh] */
+            className="fixed top-[8vh] md:top-[10vh] left-0 right-0 z-[60] flex justify-center pointer-events-none"
           >
             <a href="#hero" className="pointer-events-auto">
-              <img src={logo} alt="PRT Renovations Inc." className="h-72 md:h-96 w-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" />
+              {/* CHANGED: Shrunk mobile size to h-40 so it doesn't overlap text, kept desktop at h-96 */}
+              <img src={logo} alt="PRT Renovations Inc." className="h-40 md:h-96 w-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" />
             </a>
           </motion.div>
         )}
