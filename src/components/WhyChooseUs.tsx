@@ -1,3 +1,5 @@
+// src/components/WhyChooseUs.tsx
+
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
@@ -17,12 +19,17 @@ const WhyChooseUs = () => (
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
           <span className="text-secondary font-semibold text-sm tracking-[0.15em] uppercase font-body">Why PRT Renovations</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-charcoal-foreground mt-3 mb-6">Built on Brotherhood,<br />Driven by Excellence</h2>
+          
+          {/* CHANGED: Added "family-owned business" */}
           <p className="text-charcoal-foreground/70 font-body text-lg leading-relaxed mb-4">
-            PRT Renovations Inc. was founded by two brothers, <strong className="text-charcoal-foreground">Parm & Raj Thiara</strong>, who shared a bold vision — to build a construction company rooted in integrity, unmatched quality, and genuine care for every client.
+            PRT Renovations Inc. is a family-owned business founded by two brothers, <strong className="text-charcoal-foreground">Parm & Raj Thiara</strong>, who shared a bold vision — to build a construction company rooted in integrity, unmatched quality, and genuine care for every client.
           </p>
+          
+          {/* CHANGED: Added "over 10 years of experience" */}
           <p className="text-charcoal-foreground/70 font-body text-lg leading-relaxed mb-4">
-            Growing up, they learned the value of hard work, precision, and doing things right the first time. That foundation has shaped PRT Renovations into one of Ontario's most trusted renovation teams — known for transforming spaces that families and businesses love for years to come.
+            Growing up, they learned the value of hard work, precision, and doing things right the first time. With over 10 years of experience in the industry, that foundation has shaped PRT Renovations into one of Ontario's most trusted renovation teams — known for transforming spaces that families and businesses love for years to come.
           </p>
+          
           <p className="text-charcoal-foreground/70 font-body text-lg leading-relaxed">
             Whether it's a luxury bathroom, a full basement build, or a commercial remodel, Parm and Raj bring the same hands-on dedication and passion to every single project.
           </p>
