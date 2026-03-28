@@ -35,7 +35,7 @@ const Navbar = () => {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.6, y: -40 }}
             transition={{ duration: 0.3 }}
-            {/* CHANGED: Replaced top-16 with top-[22vh] to position it proportionally in the middle */}
+            /* Changed to top-[22vh] to position it proportionally in the middle */
             className="fixed top-[22vh] left-0 right-0 z-[60] flex justify-center pointer-events-none"
           >
             <a href="#hero" className="pointer-events-auto">
