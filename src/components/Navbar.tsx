@@ -28,15 +28,15 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Large centered logo overlay - visible before scroll AND when mobile menu is closed */}
+      {/* Large centered logo overlay */}
       <AnimatePresence>
-        {/* CHANGED: Added !mobileOpen so the logo hides when the menu is clicked */}
         {!scrolled && !mobileOpen && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.6, y: -40 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[8vh] md:top-[10vh] left-0 right-0 z-[60] flex justify-center pointer-events-none"
+            /* CHANGED: Dropped from z-[60] to z-40 so it stays UNDER the navigation menu */
+            className="fixed top-[8vh] md:top-[10vh] left-0 right-0 z-40 flex justify-center pointer-events-none"
           >
             <a href="#hero" className="pointer-events-auto">
               <img src={logo} alt="PRT Renovations Inc." className="h-40 md:h-96 w-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" />
@@ -46,8 +46,9 @@ const Navbar = () => {
       </AnimatePresence>
 
       <nav
+        /* CHANGED: Added '|| mobileOpen' so the navbar immediately gets a solid background when clicked */
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+          scrolled || mobileOpen
             ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
             : "bg-transparent"
         }`}
@@ -58,7 +59,8 @@ const Navbar = () => {
               src={logoIcon}
               alt="PRT Renovations Inc."
               className="w-auto"
-              animate={{ height: scrolled ? 56 : 0, opacity: scrolled ? 1 : 0 }}
+              /* CHANGED: Show the small corner logo when the mobile menu is open so it looks clean */
+              animate={{ height: scrolled || mobileOpen ? 56 : 0, opacity: scrolled || mobileOpen ? 1 : 0 }}
               transition={{ duration: 0.3 }}
             />
           </a>
@@ -93,7 +95,8 @@ const Navbar = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          /* CHANGED: Force the hamburger icon to turn dark when opened so it doesn't vanish into the white background */
+          className={`lg:hidden p-2 ${scrolled || mobileOpen ? "text-foreground" : "text-primary-foreground"}`}
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
