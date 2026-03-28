@@ -47,7 +47,7 @@ const QuoteForm = () => {
     
     setSubmitting(true);
 
-    // PASTE YOUR KEYS HERE! KEEP THE QUOTATION MARKS!
+    // Your active EmailJS keys are plugged in here
     const SERVICE_ID = "service_y7q5nb8";
     const TEMPLATE_ID = "template_j6qg2js";
     const PUBLIC_KEY = "lw4H4H34grcUFDPms";
@@ -56,7 +56,7 @@ const QuoteForm = () => {
       .then((result) => {
           setSubmitting(false);
           toast.success("Quote request submitted! We'll be in touch shortly.");
-          form.current?.reset();
+          form.current?.reset(); 
       }, (error) => {
           setSubmitting(false);
           toast.error("Oops! Something went wrong. Please try again or call us.");
@@ -91,49 +91,49 @@ const QuoteForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="lg:col-span-3 bg-background rounded-xl p-8 md:p-10 shadow-2xl"
+            className="lg:col-span-3 bg-white rounded-xl p-8 md:p-10 shadow-2xl"
           >
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium font-body text-foreground mb-2">Full Name *</label>
-                <Input required name="user_name" placeholder="John Smith" className="bg-muted border-border" />
+                <label className="block text-sm font-medium font-body text-slate-900 mb-2">Full Name *</label>
+                <Input required name="user_name" placeholder="John Smith" className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white" />
               </div>
               <div>
-                <label className="block text-sm font-medium font-body text-foreground mb-2">Phone Number *</label>
-                <Input required type="tel" name="user_phone" placeholder="(647) 000-0000" className="bg-muted border-border" />
+                <label className="block text-sm font-medium font-body text-slate-900 mb-2">Phone Number *</label>
+                <Input required type="tel" name="user_phone" placeholder="(647) 000-0000" className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white" />
               </div>
               <div>
-                <label className="block text-sm font-medium font-body text-foreground mb-2">Email *</label>
-                <Input required type="email" name="user_email" placeholder="john@example.com" className="bg-muted border-border" />
+                <label className="block text-sm font-medium font-body text-slate-900 mb-2">Email *</label>
+                <Input required type="email" name="user_email" placeholder="john@example.com" className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white" />
               </div>
               <div>
-                <label className="block text-sm font-medium font-body text-foreground mb-2">Location *</label>
-                <Input required name="user_location" placeholder="City, Ontario" className="bg-muted border-border" />
+                <label className="block text-sm font-medium font-body text-slate-900 mb-2">Location *</label>
+                <Input required name="user_location" placeholder="City, Ontario" className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white" />
               </div>
               <div>
-                <label className="block text-sm font-medium font-body text-foreground mb-2">Type of Project *</label>
-                <select required name="project_type" className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
+                <label className="block text-sm font-medium font-body text-slate-900 mb-2">Type of Project *</label>
+                <select required name="project_type" className="w-full h-10 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm font-body text-slate-900 focus:bg-white">
                   <option value="">Select a project type</option>
                   {projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium font-body text-foreground mb-2">Budget Range</label>
-                <select name="budget_range" className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
+                <label className="block text-sm font-medium font-body text-slate-900 mb-2">Budget Range</label>
+                <select name="budget_range" className="w-full h-10 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm font-body text-slate-900 focus:bg-white">
                   <option value="">Select budget range</option>
                   {budgetRanges.map((b) => <option key={b} value={b}>{b}</option>)}
                 </select>
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-sm font-medium font-body text-foreground mb-2">Preferred Start Time</label>
-                <select name="start_time" className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
+                <label className="block text-sm font-medium font-body text-slate-900 mb-2">Preferred Start Time</label>
+                <select name="start_time" className="w-full h-10 rounded-md border border-slate-200 bg-slate-50 px-3 text-sm font-body text-slate-900 focus:bg-white">
                   <option value="">When would you like to start?</option>
                   {startTimes.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-sm font-medium font-body text-foreground mb-2">Project Details</label>
-                <Textarea name="project_details" placeholder="Tell us about your renovation project — scope, ideas, inspiration..." rows={4} className="bg-muted border-border" />
+                <label className="block text-sm font-medium font-body text-slate-900 mb-2">Project Details</label>
+                <Textarea name="project_details" placeholder="Tell us about your renovation project — scope, ideas, inspiration..." rows={4} className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white" />
               </div>
             </div>
             <Button
