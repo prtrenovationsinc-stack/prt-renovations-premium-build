@@ -1,3 +1,12 @@
+To move the large PRT logo so it sits perfectly in the gap between the top navigation bar and the "Your Vision, Our Craft" text, we can use a viewport height percentage instead of a fixed pixel amount.
+
+Since the text is centered (around 50% down the screen), moving the logo to about 22% down the screen (top-[22vh]) usually hits that exact visual sweet spot perfectly on all screen sizes.
+
+Here is your updated Navbar.tsx file:
+
+TypeScript
+// src/components/Navbar.tsx
+
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -33,7 +42,8 @@ const Navbar = () => {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.6, y: -40 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-16 left-0 right-0 z-[60] flex justify-center pointer-events-none"
+            {/* CHANGED: Replaced top-16 with top-[22vh] to position it proportionally in the middle */}
+            className="fixed top-[22vh] left-0 right-0 z-[60] flex justify-center pointer-events-none"
           >
             <a href="#hero" className="pointer-events-auto">
               <img src={logo} alt="PRT Renovations Inc." className="h-36 md:h-48 w-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" />
