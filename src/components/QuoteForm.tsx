@@ -1,12 +1,13 @@
 // src/components/QuoteForm.tsx
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Shield } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from '@emailjs/browser';
 
 const projectTypes = [
   "Bathroom Renovation",
@@ -14,7 +15,6 @@ const projectTypes = [
   "Basement Build / Finishing",
   "Tile Installation",
   "Deck / Patio",
-  /* CHANGED: Removed "Commercial Renovation" from this list */
   "General Construction",
   "Other",
 ];
@@ -38,14 +38,30 @@ const startTimes = [
 
 const QuoteForm = () => {
   const [submitting, setSubmitting] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!form.current) return;
+    
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      toast.success("Quote request submitted! We'll be in touch shortly.");
-    }, 1500);
+
+    // PASTE YOUR KEYS HERE! KEEP THE QUOTATION MARKS!
+    const SERVICE_ID = "service_y7q5nb8";
+    const TEMPLATE_ID = "template_j6qg2js";
+    const PUBLIC_KEY = "lw4H4H34grcUFDPms";
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then((result) => {
+          setSubmitting(false);
+          toast.success("Quote request submitted! We'll be in touch shortly.");
+          form.current?.reset();
+      }, (error) => {
+          setSubmitting(false);
+          toast.error("Oops! Something went wrong. Please try again or call us.");
+          console.error("EmailJS Error:", error.text);
+      });
   };
 
   return (
@@ -70,6 +86,7 @@ const QuoteForm = () => {
           </motion.div>
 
           <motion.form
+            ref={form}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -79,44 +96,44 @@ const QuoteForm = () => {
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Full Name *</label>
-                <Input required placeholder="John Smith" className="bg-muted border-border" />
+                <Input required name="user_name" placeholder="John Smith" className="bg-muted border-border" />
               </div>
               <div>
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Phone Number *</label>
-                <Input required type="tel" placeholder="(647) 000-0000" className="bg-muted border-border" />
+                <Input required type="tel" name="user_phone" placeholder="(647) 000-0000" className="bg-muted border-border" />
               </div>
               <div>
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Email *</label>
-                <Input required type="email" placeholder="john@example.com" className="bg-muted border-border" />
+                <Input required type="email" name="user_email" placeholder="john@example.com" className="bg-muted border-border" />
               </div>
               <div>
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Location *</label>
-                <Input required placeholder="City, Ontario" className="bg-muted border-border" />
+                <Input required name="user_location" placeholder="City, Ontario" className="bg-muted border-border" />
               </div>
               <div>
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Type of Project *</label>
-                <select required className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
+                <select required name="project_type" className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
                   <option value="">Select a project type</option>
                   {projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               </div>
               <div>
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Budget Range</label>
-                <select className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
+                <select name="budget_range" className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
                   <option value="">Select budget range</option>
                   {budgetRanges.map((b) => <option key={b} value={b}>{b}</option>)}
                 </select>
               </div>
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Preferred Start Time</label>
-                <select className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
+                <select name="start_time" className="w-full h-10 rounded-md border border-border bg-muted px-3 text-sm font-body text-foreground">
                   <option value="">When would you like to start?</option>
                   {startTimes.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
               </div>
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium font-body text-foreground mb-2">Project Details</label>
-                <Textarea placeholder="Tell us about your renovation project — scope, ideas, inspiration..." rows={4} className="bg-muted border-border" />
+                <Textarea name="project_details" placeholder="Tell us about your renovation project — scope, ideas, inspiration..." rows={4} className="bg-muted border-border" />
               </div>
             </div>
             <Button
