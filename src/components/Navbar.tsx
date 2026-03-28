@@ -1,10 +1,10 @@
-To move the large PRT logo so it sits perfectly in the gap between the top navigation bar and the "Your Vision, Our Craft" text, we can use a viewport height percentage instead of a fixed pixel amount.
+//To move the large PRT logo so it sits perfectly in the gap between the top navigation bar and the "Your Vision, Our Craft" text, we can use a viewport height percentage instead of a fixed pixel amount.
 
-Since the text is centered (around 50% down the screen), moving the logo to about 22% down the screen (top-[22vh]) usually hits that exact visual sweet spot perfectly on all screen sizes.
+//Since the text is centered (around 50% down the screen), moving the logo to about 22% down the screen (top-[22vh]) usually hits that exact visual sweet spot perfectly on all screen sizes.
 
-Here is your updated Navbar.tsx file:
+//Here is your updated Navbar.tsx file:
 
-TypeScript
+//TypeScript
 // src/components/Navbar.tsx
 
 import { useState, useEffect } from "react";
