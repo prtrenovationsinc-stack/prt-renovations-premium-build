@@ -15,15 +15,23 @@ const Links = () => {
       {/* The Big Action Buttons */}
       <div className="w-full max-w-sm space-y-4">
         
-        {/* Call Button - Corrected Number */}
-        <a href="tel:6476853620" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-green-600 hover:bg-green-700 text-white rounded-2xl flex items-center justify-center gap-3">
+        {/* Call Parm */}
+        <a href="tel:6472947766" className="block w-full">
+          <Button className="w-full h-20 text-xl bg-green-600 hover:bg-green-700 text-white rounded-2xl flex items-center justify-center gap-3 font-bold">
             <Phone size={28} />
-            CALL US NOW
+            CALL US NOW (PARM)
           </Button>
         </a>
 
-        {/* WhatsApp Button - Corrected Number */}
+        {/* Call Raj */}
+        <a href="tel:6473918530" className="block w-full">
+          <Button className="w-full h-20 text-xl bg-green-600 hover:bg-green-700 text-white rounded-2xl flex items-center justify-center gap-3 font-bold">
+            <Phone size={28} />
+            CALL US NOW (RAJ)
+          </Button>
+        </a>
+
+        {/* WhatsApp Button */}
         <a href="https://wa.me/16476853620" className="block w-full">
           <Button className="w-full h-20 text-xl bg-white text-black hover:bg-zinc-200 rounded-2xl flex items-center justify-center gap-3 border-none font-bold">
             <MessageSquare size={28} />
@@ -31,7 +39,7 @@ const Links = () => {
           </Button>
         </a>
 
-        {/* Quote Form Button - Fixed Visibility and Redirection */}
+        {/* Quote Form Button */}
         <a href="/#quote" className="block w-full">
           <Button className="w-full h-20 text-xl bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-2xl flex items-center justify-center gap-3 font-bold">
             <FileText size={28} />
@@ -39,9 +47,9 @@ const Links = () => {
           </Button>
         </a>
 
-        {/* Portfolio Link - Fixed Redirection */}
+        {/* Portfolio Link - Fixed Visibility */}
         <a href="/#projects" className="block w-full">
-          <Button variant="outline" className="w-full h-20 text-xl border-zinc-700 text-white hover:bg-zinc-900 rounded-2xl flex items-center justify-center gap-3">
+          <Button className="w-full h-20 text-xl bg-zinc-800 text-white hover:bg-zinc-700 border-2 border-zinc-600 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-sm">
             <LayoutGrid size={28} />
             OUR RECENT WORK
           </Button>
