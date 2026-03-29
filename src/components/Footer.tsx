@@ -2,6 +2,7 @@
 
 import { Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { Link } from "react-router-dom"; // Added this for the secret link
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -12,7 +13,6 @@ const TikTokIcon = () => (
 const Footer = () => (
   <footer className="bg-foreground text-primary-foreground/80 pt-16 pb-8">
     <div className="container mx-auto px-4">
-      {/* CHANGED: Swapped from grid-cols-4 to grid-cols-5 on large screens to fit the new column */}
       <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
         <div className="lg:col-span-2">
           <img src={logo} alt="PRT Renovations" className="h-16 w-auto mb-4 brightness-0 invert" />
@@ -44,7 +44,6 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* ADDED: Areas Served column for local SEO */}
         <div>
           <h4 className="font-display text-lg font-semibold text-primary-foreground mb-4">Areas Served</h4>
           <div className="space-y-2 font-body text-sm text-primary-foreground/50">
@@ -72,10 +71,19 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/10 pt-8 text-center">
+      <div className="border-t border-primary-foreground/10 pt-8 text-center flex flex-col items-center">
         <p className="font-body text-xs text-primary-foreground/40">
           © {new Date().getFullYear()} PRT Renovations Inc. All rights reserved.
         </p>
+        
+        {/* Secret testing link for Parm & Raj */}
+        <Link 
+          to="/links" 
+          className="mt-4 text-[10px] text-foreground hover:text-primary-foreground/20 transition-colors"
+          title="Secret Link"
+        >
+          .
+        </Link>
       </div>
     </div>
   </footer>
