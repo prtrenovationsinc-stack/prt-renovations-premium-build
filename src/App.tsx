@@ -1,5 +1,4 @@
-// src/App.tsx
-
+// src/App.tsx update
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Links from "./pages/Links"; // Add this line
 
 const queryClient = new QueryClient();
 
@@ -20,10 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/links" element={<Links />} /> {/* Add this line */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      {/* Vercel tracking components */}
       <Analytics />
       <SpeedInsights />
     </TooltipProvider>
