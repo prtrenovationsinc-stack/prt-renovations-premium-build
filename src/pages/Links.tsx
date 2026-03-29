@@ -17,23 +17,23 @@ const Links = () => {
         
         {/* Call Parm */}
         <a href="tel:6472947766" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-green-600 hover:bg-green-700 text-white rounded-2xl flex items-center justify-center gap-3 font-bold">
+          <Button className="w-full h-20 text-xl bg-green-600 hover:bg-green-700 text-white rounded-2xl flex items-center justify-center gap-3 font-bold shadow-md">
             <Phone size={28} />
-            CALL US NOW (PARM)
+            CALL PARM
           </Button>
         </a>
 
         {/* Call Raj */}
         <a href="tel:6473918530" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-green-600 hover:bg-green-700 text-white rounded-2xl flex items-center justify-center gap-3 font-bold">
+          <Button className="w-full h-20 text-xl bg-green-600 hover:bg-green-700 text-white rounded-2xl flex items-center justify-center gap-3 font-bold shadow-md">
             <Phone size={28} />
-            CALL US NOW (RAJ)
+            CALL RAJ
           </Button>
         </a>
 
         {/* WhatsApp Button */}
         <a href="https://wa.me/16476853620" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-white text-black hover:bg-zinc-200 rounded-2xl flex items-center justify-center gap-3 border-none font-bold">
+          <Button className="w-full h-20 text-xl bg-white text-black hover:bg-zinc-200 rounded-2xl flex items-center justify-center gap-3 border-none font-bold shadow-md">
             <MessageSquare size={28} />
             WHATSAPP US
           </Button>
@@ -41,23 +41,26 @@ const Links = () => {
 
         {/* Quote Form Button */}
         <a href="/#quote" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-2xl flex items-center justify-center gap-3 font-bold">
+          <Button className="w-full h-20 text-xl bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-md">
             <FileText size={28} />
             GET A FREE QUOTE
           </Button>
         </a>
 
-        {/* Portfolio Link - Fixed Visibility */}
+        {/* Portfolio Link */}
         <a href="/#projects" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-zinc-800 text-white hover:bg-zinc-700 border-2 border-zinc-600 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-sm">
+          <Button className="w-full h-20 text-xl bg-zinc-800 text-white hover:bg-zinc-700 border-2 border-zinc-600 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-md">
             <LayoutGrid size={28} />
             OUR RECENT WORK
           </Button>
         </a>
 
-        {/* The "Exit" to the main site */}
-        <div className="pt-8 text-center">
-          <Link to="/" className="text-zinc-400 underline flex items-center justify-center gap-2 hover:text-white transition-colors">
+        {/* The "Exit" to the main site - Now a Blue Bubble */}
+        <div className="pt-8 flex justify-center">
+          <Link 
+            to="/" 
+            className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white text-sm font-bold shadow-lg transition-transform hover:scale-105 bg-[#1f2a78]"
+          >
             <Globe size={18} />
             Visit Full Website
           </Link>
