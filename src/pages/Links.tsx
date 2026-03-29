@@ -2,18 +2,21 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MessageSquare, FileText, Instagram, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png"; // Importing your logo
+import logo from "@/assets/logo.png"; 
 
 const Links = () => {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center px-6 py-12">
-      {/* Business Identity - Logo Only */}
-      <div className="flex justify-center mb-10">
-        <img 
-          src={logo} 
-          alt="PRT Renovations" 
-          className="h-24 w-auto brightness-0 invert" 
-        />
+      
+      {/* Business Identity - Original Logo in a Big White Bubble */}
+      <div className="flex justify-center mb-10 w-full max-w-sm">
+        <div className="bg-white rounded-[2.5rem] p-8 shadow-2xl flex justify-center w-full">
+          <img 
+            src={logo} 
+            alt="PRT Renovations" 
+            className="h-32 md:h-40 w-auto object-contain" 
+          />
+        </div>
       </div>
 
       {/* The Big Action Buttons */}
@@ -59,7 +62,7 @@ const Links = () => {
           </Button>
         </a>
 
-        {/* The "Exit" to the main site - Now a massive Blue Bubble */}
+        {/* The "Exit" to the main site - Massive Blue Bubble */}
         <div className="pt-6 flex justify-center w-full">
           <Link 
             to="/" 
