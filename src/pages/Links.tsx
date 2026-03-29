@@ -1,6 +1,6 @@
 // src/pages/Links.tsx
 import { Button } from "@/components/ui/button";
-import { Phone, MessageSquare, FileText, LayoutGrid, Globe } from "lucide-react";
+import { Phone, MessageSquare, FileText, Instagram, Globe } from "lucide-react"; // Changed LayoutGrid to Instagram
 import { Link } from "react-router-dom";
 
 const Links = () => {
@@ -47,11 +47,11 @@ const Links = () => {
           </Button>
         </a>
 
-        {/* Portfolio Link */}
-        <a href="/#projects" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-zinc-800 text-white hover:bg-zinc-700 border-2 border-zinc-600 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-md">
-            <LayoutGrid size={28} />
-            OUR RECENT WORK
+        {/* Instagram Link with Gradient */}
+        <a href="https://www.instagram.com/prt.renovations/" target="_blank" rel="noopener noreferrer" className="block w-full">
+          <Button className="w-full h-20 text-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90 text-white border-none rounded-2xl flex items-center justify-center gap-3 font-bold shadow-md">
+            <Instagram size={28} />
+            INSTAGRAM
           </Button>
         </a>
 
