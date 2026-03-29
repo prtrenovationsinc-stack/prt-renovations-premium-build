@@ -1,15 +1,19 @@
 // src/pages/Links.tsx
 import { Button } from "@/components/ui/button";
-import { Phone, MessageSquare, FileText, Instagram, Globe } from "lucide-react"; // Changed LayoutGrid to Instagram
+import { Phone, MessageSquare, FileText, Instagram, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png"; // Importing your logo
 
 const Links = () => {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center px-6 py-12">
-      {/* Business Identity */}
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-bold tracking-tighter mb-2">PRT Renovations Inc.</h1>
-        <p className="text-zinc-300">Premium Home Transformations</p>
+      {/* Business Identity - Logo Only */}
+      <div className="flex justify-center mb-10">
+        <img 
+          src={logo} 
+          alt="PRT Renovations" 
+          className="h-24 w-auto brightness-0 invert" 
+        />
       </div>
 
       {/* The Big Action Buttons */}
@@ -55,14 +59,14 @@ const Links = () => {
           </Button>
         </a>
 
-        {/* The "Exit" to the main site - Now a Blue Bubble */}
-        <div className="pt-8 flex justify-center">
+        {/* The "Exit" to the main site - Now a massive Blue Bubble */}
+        <div className="pt-6 flex justify-center w-full">
           <Link 
             to="/" 
-            className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white text-sm font-bold shadow-lg transition-transform hover:scale-105 bg-[#1f2a78]"
+            className="flex items-center justify-center gap-3 w-full py-5 rounded-full text-white text-xl font-bold shadow-lg transition-transform hover:scale-105 bg-[#1f2a78]"
           >
-            <Globe size={18} />
-            Visit Full Website
+            <Globe size={24} />
+            VIEW WEBSITE
           </Link>
         </div>
       </div>
