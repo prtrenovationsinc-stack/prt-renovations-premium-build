@@ -2,7 +2,7 @@
 
 import { Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/logo.png";
-import { Link } from "react-router-dom"; // Added this for the secret link
+import { Link } from "react-router-dom"; // CRITICAL: This must be here
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -76,13 +76,12 @@ const Footer = () => (
           © {new Date().getFullYear()} PRT Renovations Inc. All rights reserved.
         </p>
         
-        {/* Secret testing link for Parm & Raj */}
+        {/* BIGGER SECRET BUTTON: Invisible but easy to tap */}
         <Link 
           to="/links" 
-          className="mt-4 text-[10px] text-foreground hover:text-primary-foreground/20 transition-colors"
-          title="Secret Link"
+          className="mt-6 inline-block px-10 py-4 text-[8px] text-primary-foreground/5 hover:text-primary-foreground/20 transition-colors"
         >
-          .
+          admin_links
         </Link>
       </div>
     </div>
