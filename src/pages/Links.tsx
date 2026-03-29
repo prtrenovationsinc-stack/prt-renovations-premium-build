@@ -9,47 +9,47 @@ const Links = () => {
       {/* Business Identity */}
       <div className="text-center mb-10">
         <h1 className="text-3xl font-bold tracking-tighter mb-2">PRT Renovations Inc.</h1>
-        <p className="text-zinc-400">Premium Home Transformations</p>
+        <p className="text-zinc-300">Premium Home Transformations</p>
       </div>
 
       {/* The Big Action Buttons */}
       <div className="w-full max-w-sm space-y-4">
         
-        {/* Call Button - The #1 choice for your demographic */}
-        <a href="tel:6475615783" className="block w-full">
+        {/* Call Button - Corrected Number */}
+        <a href="tel:6476853620" className="block w-full">
           <Button className="w-full h-20 text-xl bg-green-600 hover:bg-green-700 text-white rounded-2xl flex items-center justify-center gap-3">
             <Phone size={28} />
             CALL US NOW
           </Button>
         </a>
 
-        {/* WhatsApp Button */}
-        <a href="https://wa.me/16475615783" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-white text-black hover:bg-zinc-200 rounded-2xl flex items-center justify-center gap-3 border-none">
+        {/* WhatsApp Button - Corrected Number */}
+        <a href="https://wa.me/16476853620" className="block w-full">
+          <Button className="w-full h-20 text-xl bg-white text-black hover:bg-zinc-200 rounded-2xl flex items-center justify-center gap-3 border-none font-bold">
             <MessageSquare size={28} />
             WHATSAPP US
           </Button>
         </a>
 
-        {/* Quote Form Button */}
-        <Link to="/#quote" className="block w-full">
-          <Button className="w-full h-20 text-xl bg-gold-500 hover:bg-gold-600 text-black rounded-2xl flex items-center justify-center gap-3">
+        {/* Quote Form Button - Fixed Visibility and Redirection */}
+        <a href="/#quote" className="block w-full">
+          <Button className="w-full h-20 text-xl bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-2xl flex items-center justify-center gap-3 font-bold">
             <FileText size={28} />
             GET A FREE QUOTE
           </Button>
-        </Link>
+        </a>
 
-        {/* Portfolio Link */}
-        <Link to="/#projects" className="block w-full">
-          <Button className="w-full h-20 text-xl variant-outline border-zinc-700 text-white hover:bg-zinc-900 rounded-2xl flex items-center justify-center gap-3">
+        {/* Portfolio Link - Fixed Redirection */}
+        <a href="/#projects" className="block w-full">
+          <Button variant="outline" className="w-full h-20 text-xl border-zinc-700 text-white hover:bg-zinc-900 rounded-2xl flex items-center justify-center gap-3">
             <LayoutGrid size={28} />
             OUR RECENT WORK
           </Button>
-        </Link>
+        </a>
 
         {/* The "Exit" to the main site */}
         <div className="pt-8 text-center">
-          <Link to="/" className="text-zinc-500 underline flex items-center justify-center gap-2 hover:text-white transition-colors">
+          <Link to="/" className="text-zinc-400 underline flex items-center justify-center gap-2 hover:text-white transition-colors">
             <Globe size={18} />
             Visit Full Website
           </Link>
