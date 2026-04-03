@@ -1,5 +1,4 @@
 // src/components/TestimonialsSection.tsx
-
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import {
