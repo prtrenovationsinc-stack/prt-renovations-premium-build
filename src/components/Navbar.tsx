@@ -1,5 +1,4 @@
 // src/components/Navbar.tsx
-
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -38,7 +37,6 @@ const Navbar = () => {
             className="fixed top-[8vh] md:top-[10vh] left-0 right-0 z-40 flex justify-center pointer-events-none"
           >
             <a href="#hero" className="pointer-events-auto">
-              {/* CHANGED: Scaled down height and added max-h-[35vh] so it never overflows */}
               <img 
                 src={logo} 
                 alt="PRT Renovations Inc." 
@@ -50,7 +48,6 @@ const Navbar = () => {
       </AnimatePresence>
 
       <nav
-        /* CHANGED: Added '|| mobileOpen' so the navbar immediately gets a solid background when clicked */
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled || mobileOpen
             ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border"
@@ -63,7 +60,6 @@ const Navbar = () => {
               src={logoIcon}
               alt="PRT Renovations Inc."
               className="w-auto"
-              /* CHANGED: Show the small corner logo when the mobile menu is open so it looks clean */
               animate={{ height: scrolled || mobileOpen ? 56 : 0, opacity: scrolled || mobileOpen ? 1 : 0 }}
               transition={{ duration: 0.3 }}
             />
@@ -99,7 +95,6 @@ const Navbar = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          /* CHANGED: Force the hamburger icon to turn dark when opened so it doesn't vanish into the white background */
           className={`lg:hidden p-2 ${scrolled || mobileOpen ? "text-foreground" : "text-primary-foreground"}`}
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
