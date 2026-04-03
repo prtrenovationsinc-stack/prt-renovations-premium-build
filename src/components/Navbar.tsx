@@ -35,11 +35,15 @@ const Navbar = () => {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.6, y: -40 }}
             transition={{ duration: 0.3 }}
-            /* CHANGED: Dropped from z-[60] to z-40 so it stays UNDER the navigation menu */
             className="fixed top-[8vh] md:top-[10vh] left-0 right-0 z-40 flex justify-center pointer-events-none"
           >
             <a href="#hero" className="pointer-events-auto">
-              <img src={logo} alt="PRT Renovations Inc." className="h-40 md:h-96 w-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" />
+              {/* CHANGED: Scaled down height and added max-h-[35vh] so it never overflows */}
+              <img 
+                src={logo} 
+                alt="PRT Renovations Inc." 
+                className="h-32 sm:h-40 md:h-56 lg:h-72 w-auto max-h-[35vh] drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" 
+              />
             </a>
           </motion.div>
         )}
