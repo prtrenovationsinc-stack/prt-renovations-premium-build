@@ -1,5 +1,4 @@
 // src/components/HeroSection.tsx
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
@@ -26,7 +25,6 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          {/* CHANGED: Added mt-32 sm:mt-40 md:mt-56 lg:mt-64 to push the text safely below the logo on laptops */}
           className="max-w-4xl mx-auto mt-32 sm:mt-40 md:mt-56 lg:mt-64"
         >
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6">
