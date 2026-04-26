@@ -8,7 +8,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Links from "./pages/Links"; // Add this line
+import Links from "./pages/Links";
+import ServiceLandingPage from "./pages/ServiceLandingPage";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/links" element={<Links />} /> {/* Add this line */}
+          <Route path="/links" element={<Links />} />
+          <Route path="/bathroom-renovations" element={<ServiceLandingPage />} />
+          <Route path="/kitchen-renovations" element={<ServiceLandingPage />} />
+          <Route path="/basement-finishing" element={<ServiceLandingPage />} />
+          <Route path="/tile-installation" element={<ServiceLandingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
